@@ -1,0 +1,249 @@
+.loginContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  border: 1px solid #1f2937;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.loginTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.formInputsContainer > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d1d5db;
+  margin-bottom: 0.25rem;
+}
+
+.loginInput {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  transition: all 300ms;
+}
+
+.loginInput::placeholder {
+  color: #6b7280;
+}
+
+.loginInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.linkSubtle {
+  font-size: 0.875rem;
+  color: #3b82f6;
+  transition: all 150ms;
+  text-decoration: none;
+}
+
+.linkSubtle:hover {
+  color: #93c5fd;
+}
+
+.loginSubmitButton {
+  width: 100%;
+  margin-top: 1.5rem;
+  background-image: linear-gradient(to right, #2563eb, #3b82f6);
+  color: #ffffff;
+  padding: 0.625rem 0;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 300ms;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.loginSubmitButton:hover {
+  background-image: linear-gradient(to right, #3b82f6, #60a5fa);
+  box-shadow: 0 10px 15px -3px rgba(29, 78, 216, 0.5);
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.successMessage {
+  color: #22c55e;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.loginRedirectText {
+  font-size: 0.875rem;
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 1rem;
+}
+
+.loginRedirectLink {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: #60a5fa;
+  font-weight: 500;
+  transition: color 150ms;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.loginRedirectLink:hover {
+  cursor: pointer;
+  color: #1962bc;
+}
+
+@media (min-width: 1024px) {
+  .formLabel,
+  .linkSubtle,
+  .errorMessage,
+  .successMessage,
+  .loginRedirectText {
+    font-size: 1rem;
+  }
+}
+
+.registerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordIcon {
+  position: absolute;
+  right: 14px;
+  top: 38px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.passwordIcon:hover {
+  color: #555;
+}
+
+.forgotContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgotForm {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  border: 1px solid #1f2937;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.forgotTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  color: white;
+}
+
+.forgotDescription {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.forgotInput {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  transition: all 250ms;
+}
+
+.forgotInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.forgotSubmitButton {
+  width: 100%;
+  margin-top: 1.5rem;
+  background-image: linear-gradient(to right, #2563eb, #3b82f6);
+  color: #ffffff;
+  padding: 0.625rem 0;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 300ms;
+  border: none;
+  cursor: pointer;
+}
+
+.forgotSubmitButton:hover {
+  background-image: linear-gradient(to right, #3b82f6, #60a5fa);
+  box-shadow: 0 10px 15px -3px rgba(29, 78, 216, 0.5);
+}
+
+.backToLogin {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.backToLogin a {
+  color: #60a5fa;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 150ms;
+}
+
+.backToLogin a:hover {
+  color: #93c5fd;
+}

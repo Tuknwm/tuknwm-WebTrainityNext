@@ -1,0 +1,210 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSession, useMockAuth } from "@/lib/mockAuth";
+
+import styles from "@/styles/kaming/common.module.css";
+
+export default function NavigationBar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { data: session, status } = useSession();
+  const { logout } = useMockAuth();
+  const isLoggedIn = status === "authenticated";
+
+  const userRole = session?.user?.role;
+
+  const dashboardPath =
+    userRole === "admin" ? "/admin/dashboard" : "/user/dashboard";
+
+  const produkPath = "/produk"
+
+  const pembelianPath = "/admin/pembelian";
+
+  return (
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link href="/" className={styles.logoLink}>
+          <Image
+            src="/Logo/TrainityFullWhite.svg"
+            alt="Logo"
+            width={160}
+            height={40}
+            className={styles.logoImage}
+          />
+        </Link>
+
+        <div className={styles.menuDesktop}>
+          <Link href="/" className={styles.navLink}>
+            Home
+          </Link>
+
+          <Link href={produkPath} className={styles.navLink}>
+            Produk
+          </Link>
+
+          {isLoggedIn && (
+            <>
+              <Link href={"/user/profile"} className={styles.navLink}>
+                Profile
+              </Link>
+
+              <Link href={"/user/belajar"} className={styles.navLink}>
+                Belajar
+              </Link>
+
+              {userRole === "admin" && (
+                <Link href={pembelianPath} className={styles.navLink}>
+                  Pembelian
+                </Link>
+              )}
+            </>
+          )}
+
+          <Link href="/panduan" className={styles.navLink}>
+            Panduan
+          </Link>
+        </div>
+
+        <div className={styles.actionsDesktop}>
+          {!isLoggedIn ? (
+            <>
+              <Link href="/auth/login" className={styles.buttonOutline}>
+                Masuk
+              </Link>
+              <Link href="/auth/register" className={styles.buttonPrimary}>
+                Daftar
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link href={dashboardPath} className={styles.buttonOutline}>
+                Dashboard
+              </Link>
+              <button
+                onClick={() => { logout(); window.location.href = "/"; }}
+                className={styles.buttonLogout}
+              >
+                Logout
+              </button>
+            </>
+          )}
+        </div>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={styles.menuToggle}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className={styles.menuMobileContainer}
+          >
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className={styles.menuMobileLink}
+            >
+              Home
+            </Link>
+
+            <Link
+              href={produkPath}
+              onClick={() => setIsOpen(false)}
+              className={styles.menuMobileLink}
+            >
+              Produk
+            </Link>
+
+            {isLoggedIn && (
+              <>
+                <Link
+                  href={"/user/belajar"}
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileLink}
+                >
+                  Belajar
+                </Link>
+
+                <Link
+                  href={"/user/profile"}
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileLink}
+                >
+                  Profile
+                </Link>
+
+                {userRole === "admin" && (
+                  <Link
+                    href={pembelianPath}
+                    onClick={() => setIsOpen(false)}
+                    className={styles.menuMobileLink}
+                  >
+                    Pembelian
+                  </Link>
+                )}
+
+                <Link
+                  href="/panduan"
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileLink}
+                >
+                  Panduan
+                </Link>
+
+                <Link
+                  href={dashboardPath}
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileLink}
+                >
+                  Dashboard
+                </Link>
+
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    logout(); window.location.href = "/";
+
+                  }}
+                  className={styles.menuMobileLogout}
+                >
+                  Logout
+                </button>
+              </>
+            )}
+
+            {!isLoggedIn && (
+              <>
+                <Link
+                  href="/auth/login"
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileLogin}
+                >
+                  Masuk
+                </Link>
+                <Link
+                  href="/auth/register"
+                  onClick={() => setIsOpen(false)}
+                  className={styles.menuMobileRegister}
+                >
+                  Daftar
+                </Link>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

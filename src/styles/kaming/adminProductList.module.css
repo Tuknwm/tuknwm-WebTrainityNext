@@ -1,0 +1,212 @@
+.listPage_container {
+  color: #ffffff;
+  margin-top: 10rem;
+}
+
+.listPage_heroSection {
+  text-align: center;
+}
+
+.listPage_title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.listPage_subtitle {
+  color: #9ca3af;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.listPage_tabContentWrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
+}
+
+@media (min-width: 1024px) {
+  .listPage_tabContentWrapper {
+    width: 100%;
+  }
+}
+
+.listPage_videoFormContainer {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #374151;
+}
+
+.listPage_videoFormContainer ul{
+    padding: 0;
+    margin: 1rem 0.5rem;
+}
+
+.listPage_videoFormTitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.listPage_inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .listPage_inputGroup {
+    flex-direction: row;
+  }
+}
+
+.listPage_videoInput {
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1 1 0%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #374151;
+  color: #ffffff;
+}
+
+.listPage_videoInput::placeholder {
+  color: #6b7280;
+}
+
+.listPage_addButton {
+  background-color: rgba(37, 99, 235, 0.1);
+  font-size: medium;
+  color: #2563eb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.listPage_addButton:hover {
+    transition: all 0.3s ease;
+    scale: calc(1.01);
+    background-color: rgba(37, 99, 235, 0.3);
+}
+
+.listPage_videoList {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.listPage_videoList > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.5rem;
+}
+
+.listPage_videoListItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  border-color: #374151;
+  padding-bottom: 0.25rem;
+}
+
+.listPage_videoCode {
+  color: #9ca3af;
+}
+
+.productGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.productCard {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #374151;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.productCard > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cardEditButton {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+
+.cardEditButton:hover {
+  text-shadow: 1px 1px 16px #a4cdff;
+  color: #a4cdff;
+}
+
+.cardDeleteButton {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #ef4444;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+
+.cardDeleteButton:hover {
+  text-shadow: 1px 1px 16px #ff6d6d;
+  color: #ff6d6d;
+}
+
+.cardDescription {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  flex-grow: 1;
+}
+
+@media (min-width: 1024px) {
+  .cardDescription {
+    font-size: 1rem;
+  }
+}
+
+.emptyListText {
+  text-align: center;
+  color: #9ca3af;
+}

@@ -1,0 +1,115 @@
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+@media (min-width: 768px) {
+  .detailGrid {
+    grid-template-columns: 3fr 2fr;
+    gap: 2.5rem;
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1C1C1E;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  align-self: start;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(60, 60, 60);
+  background-color: rgb(10, 10, 10, 0.30);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.productTitle {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.productDescription {
+  font-size: 1.1rem;
+  color: #B0B0B0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.actionBox {
+  border: 1px solid rgb(60, 60, 60);
+  background-color: rgb(10, 10, 10, 0.30);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+.productPrice {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #30D158;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.actionButtonContainer {
+  width: 100%;
+}
+
+.actionButton_primary,
+.actionButton_owned,
+.actionButton_secondary {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton_primary {
+  background-color: #0A84FF;
+  color: white;
+}
+
+.actionButton_primary:hover {
+  background-color: #0070e0;
+}
+
+.actionButton_owned {
+  background-color: #30D158;
+  color: white;
+}
+
+.actionButton_owned:hover {
+  background-color: #2ab44d;
+}
+
+.actionButton_secondary {
+  background-color: #3A3A3C;
+  color: #FFFFFF;
+}
+
+.actionButton_secondary:hover {
+  background-color: #4a4a4c;
+}

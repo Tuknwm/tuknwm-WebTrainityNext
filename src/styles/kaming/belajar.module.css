@@ -1,0 +1,195 @@
+.belajarPage_header {
+  margin-bottom: 2rem;
+}
+
+.belajarPage_playerWrapper {
+  width: 100%;
+  background-color: #000;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.2),
+              0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.belajarPage_playerWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.belajarPage_noVideo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #9ca3af;
+  font-size: 1.25rem;
+}
+
+.belajarPage_infoPanel {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #374151;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.belajarPage_videoTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.belajarPage_courseDesc {
+  color: #d1d5db;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.belajarPage_carouselContainer {
+    width: 100%;
+}
+
+.belajarPage_infoTitle{
+    padding: 0;
+    margin: 0 0 1rem 0;
+    
+}
+.belajarPage_carouselTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 0.75rem;
+}
+
+.belajarPage_carouselScroller {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.25rem;
+    padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.belajarPage_carouselScroller::-webkit-scrollbar {
+    display: none;
+}
+
+.belajarPage_thumbnailCard {
+    flex: 0 0 320px;
+    border-radius: 0.75rem;
+    border: 1px solid #374151;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    position: relative;
+    scroll-snap-align: start;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.belajarPage_thumbnailCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: #4b5563;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.belajarPage_thumbnailCard_active {
+  border-color: #3b82f6;
+  transform: scale(1.0);
+}
+
+.belajarPage_thumbnailCard::after {
+  content: '▶';
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding-left: 2px;
+  opacity: 0;
+  transition: all 200ms ease-out;
+  z-index: 1;
+}
+
+.belajarPage_thumbnailCard:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.8);
+}
+
+.belajarPage_thumbnailCard_active::after {
+  opacity: 1;
+  background-color: rgba(59, 130, 246, 0.8);
+}
+
+.belajarPage_Image {
+    width: 90%;
+    box-sizing: border-box;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: opacity 200ms ease-out;
+    margin: 1rem;
+}
+
+.belajarPage_thumbnailCard:hover .belajarPage_thumbnailImage {
+  opacity: 0.8;
+}
+
+.belajarPage_thumbnailTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d1d5db;
+  padding: 1rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: none;
+}
+
+.belajarPage_thumbnailCard_active .belajarPage_thumbnailTitle {
+  color: #3b82f6;
+}
+
+.belajarPage_noVideoText {
+  color: #9ca3af;
+  padding: 2rem;
+}
+
+.belajarPage_loading,
+.belajarPage_error {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 4rem 0;
+}
+
+.belajarPage_error {
+  color: #ef4444;
+}
