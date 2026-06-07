@@ -81,7 +81,3 @@ npm run lint     # ESLint
 ```
 
 ---
-
-## Deployment
-
-Deploy ke Vercel langsung tanpa konfigurasi tambahan — tidak ada environment variable yang dibutuhkan.
